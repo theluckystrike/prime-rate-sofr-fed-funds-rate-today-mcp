@@ -1,0 +1,59 @@
+{
+  "name": "prime-rate-sofr-fed-funds-rate-today-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for the prime rate, SOFR and the fed funds rate today: the federal funds target range and effective rate, the prime rate, SOFR with its 30, 90 and 180 day averages and index, rate history, every Fed rate change, and a loan rate calculator for prime or SOFR plus a margin. Read live from the New York Fed. No API key.",
+  "type": "module",
+  "license": "MIT",
+  "author": "theluckystrike",
+  "mcpName": "io.github.theluckystrike/prime-rate-sofr-fed-funds-rate-today-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/prime-rate-sofr-fed-funds-rate-today-mcp"
+  },
+  "homepage": "https://www.mcpstamp.com/servers/",
+  "bin": {
+    "prime-rate-sofr-fed-funds-rate-today-mcp": "dist/stdio.js"
+  },
+  "main": "dist/stdio.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test",
+    "start": "node dist/stdio.js",
+    "deploy": "npx wrangler@4 deploy",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "prime-rate",
+    "sofr",
+    "fed-funds-rate",
+    "federal-funds-rate",
+    "interest-rates",
+    "fomc",
+    "fed-rate-cut",
+    "effr",
+    "sofr-average",
+    "sba-loan",
+    "loan-rate",
+    "new-york-fed",
+    "cloudflare-workers"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.theluckystrike/prime-rate-sofr-fed-funds-rate-today-mcp",
+  "title": "Prime Rate, SOFR and Fed Funds Rate Today MCP",
+  "description": "Prime rate, SOFR and fed funds rate today: target range, SOFR averages, Fed rate cuts, loan rates.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/theluckystrike/prime-rate-sofr-fed-funds-rate-today-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://prime-rate-sofr-fed-funds-rate-today-mcp.lipmichal.workers.dev/mcp"
+    }
+  ]
+}

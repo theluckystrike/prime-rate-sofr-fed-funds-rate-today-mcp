@@ -1,0 +1,7 @@
+[
+  ["fed_funds_rate_today", {}],
+  ["sofr_rate_today", {}],
+  ["interest_rate_history", {"rate": "sofr", "start": "2026-10-01"}],
+  ["fed_rate_changes", {"since": "2019-01-01"}],
+  ["loan_rate_calculator", {"index": "prime", "margin_percent": 2.75, "amount": 250000, "years": 10}]
+]
