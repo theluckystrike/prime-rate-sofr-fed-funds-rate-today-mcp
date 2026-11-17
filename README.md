@@ -1,5 +1,49 @@
 # prime-rate-sofr-fed-funds-rate-today-mcp
 
+**Today's prime rate, SOFR and fed funds rate from the New York Fed, plus Fed rate changes and an SBA loan rate calculator, as an MCP server.** Free and hosted: no API key, no sign-up.
+
+Hosted MCP URL (Streamable HTTP):
+
+```
+https://prime-rate-sofr-fed-funds-rate-today-mcp.lipmichal.workers.dev/mcp
+```
+
+## Quick start
+
+### Claude
+
+Claude Desktop or claude.ai: Settings > Connectors > Add custom connector, then paste the URL above.
+
+Claude Code:
+
+```
+claude mcp add --transport http prime-sofr-rates https://prime-rate-sofr-fed-funds-rate-today-mcp.lipmichal.workers.dev/mcp
+```
+
+Claude Desktop config file (`claude_desktop_config.json`), through the `mcp-remote` bridge:
+
+```json
+{
+  "mcpServers": {
+    "prime-sofr-rates": { "command": "npx", "args": ["-y", "mcp-remote", "https://prime-rate-sofr-fed-funds-rate-today-mcp.lipmichal.workers.dev/mcp"] }
+  }
+}
+```
+
+### Cursor
+
+Add to `~/.cursor/mcp.json`.
+
+```json
+{
+  "mcpServers": {
+    "prime-sofr-rates": { "url": "https://prime-rate-sofr-fed-funds-rate-today-mcp.lipmichal.workers.dev/mcp" }
+  }
+}
+```
+
+## About
+
 The prime rate, SOFR and the fed funds rate today for AI assistants. Ask what the prime rate is, what SOFR printed yesterday, when the Fed last cut rates, or what an SBA loan at prime + 2.75 costs this month.
 
 This is a Model Context Protocol (MCP) server. It reads the Federal Reserve Bank of New York reference rates (Markets Data API) at call time. It needs no API key.
@@ -22,7 +66,7 @@ Every result has structured JSON, a plain-text summary, `as_of`, `source` and `m
 - The latest FOMC decision, read from the target range carried on every EFFR row, so a cut or hike shows up the day it takes effect.
 - The prime rate by the rule banks follow: the top of the fed funds target range plus 3 percentage points.
 
-## Install
+## Other clients and local install
 
 ### Hosted (custom connector, ChatGPT developer mode, any remote MCP client)
 
@@ -30,18 +74,6 @@ Paste this URL. No token, no sign-up.
 
 ```
 https://prime-rate-sofr-fed-funds-rate-today-mcp.lipmichal.workers.dev/mcp
-```
-
-### Cursor
-
-Add to `~/.cursor/mcp.json`.
-
-```json
-{
-  "mcpServers": {
-    "prime-sofr-rates": { "url": "https://prime-rate-sofr-fed-funds-rate-today-mcp.lipmichal.workers.dev/mcp" }
-  }
-}
 ```
 
 ### VS Code
